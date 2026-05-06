@@ -3,6 +3,7 @@ import { NodeStreamableHTTPServerTransport } from "@modelcontextprotocol/node";
 import type { Request, Response } from "express";
 
 import { getServer } from "./server";
+import { ucpDiscoveryProfile } from "./ucp-discovery";
 
 const app = createMcpExpressApp();
 
@@ -63,6 +64,9 @@ app.delete("/mcp", async (req: Request, res: Response) => {
   );
 });
 
+app.get(".well-known/ucp", async (req: Request, res: Response) => {
+  res.json(ucpDiscoveryProfile);
+});
 
 // Start the server
 const PORT = 3000;
