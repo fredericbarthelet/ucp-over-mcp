@@ -8,15 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@cfworker/json-schema':
+        specifier: ^4.1.1
+        version: 4.1.1
       '@modelcontextprotocol/express':
         specifier: 2.0.0-alpha.2
-        version: 2.0.0-alpha.2(@modelcontextprotocol/server@2.0.0-alpha.2)(express@5.2.1)
+        version: 2.0.0-alpha.2(@modelcontextprotocol/server@2.0.0-alpha.2(@cfworker/json-schema@4.1.1))(express@5.2.1)
       '@modelcontextprotocol/node':
         specifier: 2.0.0-alpha.2
-        version: 2.0.0-alpha.2(@modelcontextprotocol/server@2.0.0-alpha.2)(hono@4.12.18)
+        version: 2.0.0-alpha.2(@modelcontextprotocol/server@2.0.0-alpha.2(@cfworker/json-schema@4.1.1))(hono@4.12.18)
       '@modelcontextprotocol/server':
         specifier: 2.0.0-alpha.2
-        version: 2.0.0-alpha.2
+        version: 2.0.0-alpha.2(@cfworker/json-schema@4.1.1)
       '@ucp-js/sdk':
         specifier: ^0.1.0
         version: 0.1.0
@@ -35,6 +38,9 @@ importers:
         version: 6.0.3
 
 packages:
+
+  '@cfworker/json-schema@4.1.1':
+    resolution: {integrity: sha512-gAmrUZSGtKc3AiBL71iNWxDsyUC5uMaKKGdvzYsBoTW/xi42JQHl7eKV2OYzCUqvc+D2RCcf7EXY2iCyFIk6og==}
 
   '@hono/node-server@1.19.14':
     resolution: {integrity: sha512-GwtvgtXxnWsucXvbQXkRgqksiH2Qed37H9xHZocE5sA3N8O8O8/8FA3uclQXxXVzc9XBZuEOMK7+r02FmSpHtw==}
@@ -372,24 +378,28 @@ packages:
 
 snapshots:
 
+  '@cfworker/json-schema@4.1.1': {}
+
   '@hono/node-server@1.19.14(hono@4.12.18)':
     dependencies:
       hono: 4.12.18
 
-  '@modelcontextprotocol/express@2.0.0-alpha.2(@modelcontextprotocol/server@2.0.0-alpha.2)(express@5.2.1)':
+  '@modelcontextprotocol/express@2.0.0-alpha.2(@modelcontextprotocol/server@2.0.0-alpha.2(@cfworker/json-schema@4.1.1))(express@5.2.1)':
     dependencies:
-      '@modelcontextprotocol/server': 2.0.0-alpha.2
+      '@modelcontextprotocol/server': 2.0.0-alpha.2(@cfworker/json-schema@4.1.1)
       express: 5.2.1
 
-  '@modelcontextprotocol/node@2.0.0-alpha.2(@modelcontextprotocol/server@2.0.0-alpha.2)(hono@4.12.18)':
+  '@modelcontextprotocol/node@2.0.0-alpha.2(@modelcontextprotocol/server@2.0.0-alpha.2(@cfworker/json-schema@4.1.1))(hono@4.12.18)':
     dependencies:
       '@hono/node-server': 1.19.14(hono@4.12.18)
-      '@modelcontextprotocol/server': 2.0.0-alpha.2
+      '@modelcontextprotocol/server': 2.0.0-alpha.2(@cfworker/json-schema@4.1.1)
       hono: 4.12.18
 
-  '@modelcontextprotocol/server@2.0.0-alpha.2':
+  '@modelcontextprotocol/server@2.0.0-alpha.2(@cfworker/json-schema@4.1.1)':
     dependencies:
       zod: 4.4.3
+    optionalDependencies:
+      '@cfworker/json-schema': 4.1.1
 
   '@types/body-parser@1.19.6':
     dependencies:
